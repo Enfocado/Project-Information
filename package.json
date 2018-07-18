@@ -1,0 +1,30 @@
+{
+  "name": "project-information",
+  "version": "1.0.0",
+  "description": "Project Information Component for Igniter",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MADZ-labs/Project-Information.git"
+  },
+  "author": "Aman Vaid",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MADZ-labs/Project-Information/issues"
+  },
+  "homepage": "https://github.com/MADZ-labs/Project-Information#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "nodemon": "^1.18.3"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.10.0"
+  }
+}
