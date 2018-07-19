@@ -15,3 +15,5 @@ app.use(bodyParser.urlencoded({
 app.listen(port, () => {
   console.log('Listening on http://localhost:3001');
 });
+
+module.exports = app;
