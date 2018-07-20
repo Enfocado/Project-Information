@@ -8,12 +8,12 @@ module.exports = {
         loader: 'babel-loader',
         query: {
           presets: ['env', 'react'],
-        }
-      }
-    ]
+        },
+      },
+    ],
   },
   output: {
     filename: 'bundle.js',
     path: './public',
-  }
+  },
 };
