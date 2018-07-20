@@ -12,6 +12,14 @@ app.use(bodyParser.urlencoded({
   extended: true,
 }));
 
-app.listen(port, () => {
-  console.log('Listening on http://localhost:3001');
+app.get('/', (req, res) => {
+  res.sendFile('index.html');
 });
+
+if (process.env.NODE_ENV !== 'test') {
+  app.listen(port, () => {
+    console.log('Listening on http://localhost:3001');
+  });
+}
+
+module.exports = app;
