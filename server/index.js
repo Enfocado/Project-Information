@@ -2,8 +2,13 @@ const express = require('express');
 
 const bodyParser = require('body-parser');
 
-const app = express();
+const Log = require('log');
 
+// const db = require('../db');
+
+const log = new Log('info');
+
+const app = express();
 const port = process.env.PORT || 3001;
 
 app.use(express.static('public'));
@@ -18,7 +23,7 @@ app.get('/', (req, res) => {
 
 if (process.env.NODE_ENV !== 'test') {
   app.listen(port, () => {
-    console.log('Listening on http://localhost:3001');
+    log.info('Listening on http://localhost:3001');
   });
 }
 
