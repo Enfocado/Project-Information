@@ -12,4 +12,14 @@ module.exports = {
       log.info('here');
     },
   },
+
+  fillData: {
+    post: (request, response) => {
+      model.fillData.post((err, data) => {
+        if (err) throw err;
+        log.info(data);
+      });
+      log.info('here');
+    },
+  },
 };
