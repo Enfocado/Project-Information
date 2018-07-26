@@ -15,12 +15,15 @@ module.exports = {
 
   fillData: {
     post: (callback) => {
-      db.con.query('SELECT COUNT(*) FROM Project', (err, data) => {
-        if (err) {
-          callback(err, null);
-        } else {
-          log.info(data);
-        }
+      db.con.connect((connectionError) => {
+        if (connectionError) throw connectionError;
+        db.con.query('SELECT COUNT(*) FROM Project', (err, data) => {
+          if (err) {
+            callback(err, null);
+          } else {
+            log.info(data);
+          }
+        });
       });
     },
   },

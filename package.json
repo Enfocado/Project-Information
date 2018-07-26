@@ -4,7 +4,7 @@
   "description": "Project Information Component for Igniter",
   "main": "index.js",
   "scripts": {
-    "test": "jest --coverage",
+    "test": "jest --coverage --detectOpenHandles",
     "start": "nodemon server/index.js",
     "react-dev": "webpack -d --watch"
   },
