@@ -14,6 +14,9 @@ module.exports = {
   },
 
   fillData: {
+    get: (request, response) => {
+      log.info('here');
+    },
     post: (request, response) => {
       model.fillData.post((err, data) => {
         if (err) throw err;
