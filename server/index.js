@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const Log = require('log');
+const router = require('./routes.js');
 
 const log = new Log('info');
 const app = express();
@@ -12,6 +13,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true,
 }));
+app.use('/', router);
 
 app.get('/', (req, res) => {
   res.sendFile('index.html');
