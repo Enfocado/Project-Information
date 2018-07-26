@@ -1,14 +1,11 @@
 const express = require('express');
-
 const bodyParser = require('body-parser');
-
 const Log = require('log');
-
-// const db = require('../db');
+const router = require('./routes.js');
 
 const log = new Log('info');
-
 const app = express();
+
 const port = process.env.PORT || 3001;
 
 app.use(express.static('public'));
@@ -16,6 +13,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true,
 }));
+app.use('/', router);
 
 app.get('/', (req, res) => {
   res.sendFile('index.html');
