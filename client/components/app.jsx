@@ -2,6 +2,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import NavBar from './navbar';
 import Creator from './creator';
+import Title from './title';
 
 class App extends React.Component {
   constructor(props) {
@@ -20,6 +21,7 @@ class App extends React.Component {
         </Div>
         <Div projectInformation>
           <Creator />
+          <Title />
         </Div>
       </Div>
     );
@@ -27,11 +29,13 @@ class App extends React.Component {
 }
 
 const Div = styled.div`
+  font: 100% "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
   ${props => props.projectInformation && css`
+    font: 100% "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
     width: 60%;
     height: 50%;
-    background-color: transparent;
-    margin: auto;
+    margin: 0 auto;
+    padding-top: 0;
   `}
 `;
 
