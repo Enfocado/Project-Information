@@ -29,7 +29,9 @@ class App extends React.Component {
 }
 
 const Div = styled.div`
+  font: 100% "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
   ${props => props.projectInformation && css`
+    font: 100% "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
     width: 60%;
     height: 50%;
     margin: 0 auto;

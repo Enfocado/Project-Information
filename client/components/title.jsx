@@ -23,12 +23,10 @@ const Div = styled.div`
 `;
 
 const H1 = styled.h1`
-  font: 100% "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 38px;
 `;
 
 const H3 = styled.h3`
-  font: 100% "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: gray;
 `;
 
