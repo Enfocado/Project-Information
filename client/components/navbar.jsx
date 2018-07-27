@@ -1,6 +1,5 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import logo from '../igniter.png';
 
 const NavBar = () => (
   <div>
@@ -80,36 +79,3 @@ const Horizontal = styled.hr`
 
 
 module.exports = NavBar;
-
-
-// ${props => props.logo && css`
-//   position: relative;
-//   top: 50%;
-//   left: 35%;
-//   width: auto;
-//   height: auto;
-//   padding: 0;
-// `}
-
-// <div className="">
-//     <button type="submit" className="navbarOption mr">
-//       Explore
-//     </button>
-
-//     <a href="google.com" className="navbarOption mr">
-//       Start a project
-//     </a>
-
-//     <img src={logo} alt="igniter" />
-
-//     <button type="submit" className="navbarOption">
-//       Search
-//       <img src={search} alt="search" className="searchIcon" />
-//     </button>
-
-//     <button type="submit" className="navbarOption">
-//       Sign In
-//     </button>
-
-//     <hr />
-//   </div>
