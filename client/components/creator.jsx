@@ -6,6 +6,7 @@ const Creator = () => (
     <Div logo>
       <Image src="https://i.pinimg.com/originals/73/fb/7f/73fb7fb7b9cd1833e16bb4fcef17a962.png" alt="company logo" />
     </Div>
+    <br/>
     <Div>
       <Label>
         By Looking Glass
@@ -20,9 +21,7 @@ const Creator = () => (
 
 const Div = styled.div`
   display: inline-block;
-  background-color: transparent;
   ${props => props.logo && css`
-    background-color: transparent;
     width: 75px;
     height: 75px;
     display:flex;
@@ -30,6 +29,7 @@ const Div = styled.div`
     justify-content:center;
     border-radius: 50%;
   `}
+  float: left;
 `;
 
 const Label = styled.label`
