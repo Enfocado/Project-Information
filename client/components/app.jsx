@@ -2,6 +2,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import NavBar from './navbar';
 import Creator from './creator';
+import Title from './title';
 
 class App extends React.Component {
   constructor(props) {
@@ -20,6 +21,7 @@ class App extends React.Component {
         </Div>
         <Div projectInformation>
           <Creator />
+          <Title />
         </Div>
       </Div>
     );
@@ -30,8 +32,8 @@ const Div = styled.div`
   ${props => props.projectInformation && css`
     width: 60%;
     height: 50%;
-    background-color: transparent;
-    margin: auto;
+    margin: 0 auto;
+    padding-top: 0;
   `}
 `;
 
