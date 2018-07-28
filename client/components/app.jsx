@@ -17,11 +17,9 @@ class App extends React.Component {
 
   componentDidMount() {
     axios.get('/project/301').then((err, res) => {
-      if (err) {
-        throw err;
-      } else {
-        this.setState(res.data);
-      }
+      this.setState(res.data);
+    }).catch((err) => {
+      throw err;
     });
   }
 
