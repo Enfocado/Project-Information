@@ -1,19 +1,23 @@
-const Log = require('log');
 const faker = require('faker');
 const moment = require('moment');
 const db = require('../index.js');
-
-const log = new Log('info');
 
 const categories = ['Music', 'Publishing', 'Film', 'Design & Tech', 'Arts', 'Comics & Illustration', 'Games', 'Food & Craft'];
 
 module.exports = {
   project: {
-    get: () => {
-      log.info('Get Request in models');
-    },
-    post: () => {
-      log.info('Post Request in models');
+    get: (id, callback) => {
+      db.query(`SELECT p.Project_Name as Project_Name, p.Project_Description as Project_Description, 
+        p.Currently_Goal as Currently_Funded, p.Funding_Goal as Funding_Goal, p.Start_Date as Start_Date, 
+        p.End_Date as End_Date, p.Video_Link as Video_Link, p.Is_Followed as Is_Followed, p.Category as Category, 
+        p.Location as Location, p.Creator_ID as Creator_ID, c.Company_Name, c.Company_Logo 
+        FROM project p INNER JOIN creator c ON p.Creator_ID = c.ID WHERE p.ID = ${id}`, (err, results) => {
+        if (err) {
+          callback(err, null);
+        } else {
+          callback(null, results);
+        }
+      });
     },
   },
 
@@ -53,13 +57,11 @@ module.exports = {
           '${faker.random.arrayElement(categories)}',
           '${faker.image.imageUrl()}'
         )`;
-      log.info(query);
 
       db.query(query, (err, results) => {
         if (err) {
           callback(err, null);
         } else {
-          log.info(query);
           callback(null, results);
         }
       });
