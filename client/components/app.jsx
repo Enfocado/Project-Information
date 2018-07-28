@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 import NavBar from './navbar';
 import Creator from './creator';
 import Title from './title';
+import VideoPlayer from './video-player';
 
 class App extends React.Component {
   constructor(props) {
@@ -22,6 +23,7 @@ class App extends React.Component {
         <Div projectInformation>
           <Creator />
           <Title />
+          <VideoPlayer />
         </Div>
       </Div>
     );
