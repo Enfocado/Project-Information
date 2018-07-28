@@ -57,11 +57,11 @@ const Button = styled.button`
   ${props => props.navbar && css`
     border: none;
     outline: none;
-    color: 2b2727;
+    color: #2b2727;
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-size: 1em;
     &:hover {
-      color: #034752;
+      color: #429b76;
     }
   `}
 `;
@@ -74,7 +74,7 @@ const Image = styled.img`
 `;
 
 const Horizontal = styled.hr`
-  border-color: #034752;
+  border-color: #429b76;
 `;
 
 
