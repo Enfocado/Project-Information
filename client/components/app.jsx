@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import styled, { css } from 'styled-components';
 import NavBar from './navbar';
 import Creator from './creator';
@@ -11,8 +12,15 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-
     };
+  }
+
+  componentDidMount() {
+    axios.get('/project/301').then((err, res) => {
+      this.setState(res.data);
+    }).catch((err) => {
+      throw err;
+    });
   }
 
   render() {
@@ -22,7 +30,7 @@ class App extends React.Component {
           <NavBar />
         </Div>
         <Div projectInformation>
-          <Creator />
+          <Creator logo={companyLogo} />
           <Title />
           <Funding />
           <VideoPlayer />
