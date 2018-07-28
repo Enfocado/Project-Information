@@ -8,7 +8,7 @@ const VideoPlayer = () => (
 );
 
 const IFrame = styled.iframe`
-  width: 75%;
+  width: 65%;
   height: 100%;
   border: none;
 `;
