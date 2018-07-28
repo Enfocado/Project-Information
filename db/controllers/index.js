@@ -7,9 +7,6 @@ module.exports = {
     get: (request, response) => {
       log.info('here');
     },
-    post: (request, response) => {
-      log.info('here');
-    },
   },
 
   fillData: {

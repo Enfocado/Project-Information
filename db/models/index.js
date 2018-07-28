@@ -12,9 +12,6 @@ module.exports = {
     get: () => {
       log.info('Get Request in models');
     },
-    post: () => {
-      log.info('Post Request in models');
-    },
   },
 
   fillData: {
