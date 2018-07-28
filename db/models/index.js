@@ -53,7 +53,6 @@ module.exports = {
           '${faker.random.arrayElement(categories)}',
           '${faker.image.imageUrl()}'
         )`;
-      log.info(query);
 
       db.query(query, (err, results) => {
         if (err) {
