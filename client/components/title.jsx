@@ -1,17 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Title = () => (
-  <Div>
-    <H1>
-      The Looking Glass: A Holographic Display for 3D Creators
-    </H1>
-    <H3>
-      The Looking Glass is the first desktop holographic display designed for 3D creators.
-       No VR or AR headgear required.
-    </H3>
-  </Div>
-);
+const Title = ({ project, description }) => {
+  return (
+    <Div>
+      <H1>
+        {project}
+      </H1>
+      <H3>
+        {description}
+      </H3>
+    </Div>
+  );
+};
 
 const Div = styled.div`
   display: inline-block;
