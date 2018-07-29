@@ -29,12 +29,12 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('/project/305').then((res) => {
+    axios.get('/project/310').then((res) => {
       this.setState({
         projectName: res.data.Project_Name,
         projectDescription: res.data.Project_Description,
         currentlyFunded: res.data.Currently_Funded,
-        fundingGoal: res.data.FundingGoal,
+        fundingGoal: res.data.Funding_Goal,
         startDate: res.data.Start_Date,
         endDate: res.data.End_Date,
         videoLink: res.data.Video_Link,
@@ -50,11 +50,30 @@ class App extends React.Component {
     });
   }
 
+  getDateDiff() {
+    const date1 = new Date(this.state.endDate);
+    const date2 = new Date();
+    const ms = date1 - date2;
+    let s = Math.floor(ms / 1000);
+    let m = Math.floor(s / 60);
+    s %= 60;
+    let h = Math.floor(m / 60);
+    m %= 60;
+    const d = Math.floor(h / 24);
+    h %= 24;
+
+    return d;
+  }
+
   render() {
     const {
       projectName, projectDescription, currentlyFunded, fundingGoal, startDate, endDate,
       videoLink, isFollowed, category, location, creatorID, companyName, companyLogo,
     } = this.state;
+
+    const daysToGo = this.getDateDiff();
+    const date = new Date(endDate);
+
     return (
       <Div>
         <Div>
@@ -71,7 +90,8 @@ class App extends React.Component {
             funding={currentlyFunded}
             goal={fundingGoal}
             start={startDate}
-            end={endDate}
+            end={date}
+            days={daysToGo}
             follow={isFollowed}
           />
           <VideoPlayer video={videoLink} />
