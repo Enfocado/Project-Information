@@ -1,4 +1,32 @@
+const Log = require('log');
 const model = require('../models/index.js');
+
+const log = new Log('info');
+
+const fillData = (modelMethod, prop, callback) => {
+  modelMethod.get((err, data) => {
+    if (err) {
+      callback(err);
+    } else {
+      const count = data[0][prop];
+      if (count < 100) {
+        const inserts = 100 - count;
+        for (let i = 1; i <= inserts; i += 1) {
+          modelMethod.post((postErr, postData) => {
+            if (postErr) {
+              callback(postErr);
+            } else {
+              log.info('Inserted! -', postData);
+            }
+          });
+        }
+        callback(null);
+      } else {
+        callback(null);
+      }
+    }
+  });
+};
 
 module.exports = {
   project: {
@@ -13,24 +41,25 @@ module.exports = {
     },
   },
 
-  fillData: {
-    get: (request, response) => {
-      let count = 0;
-      model.fillData.get((err, data) => {
+  fillCreators: {
+    post: (request, response) => {
+      fillData(model.fillCreators, 'creatorCount', (err) => {
         if (err) {
           throw err;
         } else {
-          count = data[0].projectCount;
-          while (count < 100) {
-            model.fillData.post((postErr, postData) => {
-              if (postErr) {
-                throw err;
-              } else {
-                response.send(postData);
-              }
-            });
-            count += 1;
-          }
+          response.end();
+        }
+      });
+    },
+  },
+
+  fillProjects: {
+    post: (request, response) => {
+      fillData(model.fillProjects, 'projectCount', (err) => {
+        if (err) {
+          throw err;
+        } else {
+          response.end();
         }
       });
     },
