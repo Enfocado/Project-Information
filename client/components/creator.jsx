@@ -1,23 +1,26 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-const Creator = () => (
-  <Div>
-    <Div logo>
-      <Image src="https://i.pinimg.com/originals/73/fb/7f/73fb7fb7b9cd1833e16bb4fcef17a962.png" alt="company logo" />
-    </Div>
-    <br />
+const Creator = (props) => {
+  const { logo, company, companyID } = props;
+  return (
     <Div>
-      <Label>
-        By Looking Glass
-      </Label>
+      <Div logo>
+        <Image src={logo} alt="company logo" />
+      </Div>
       <br />
-      <Label subtext>
-        3 created
-      </Label>
+      <Div>
+        <Label id={companyID}>
+          {company}
+        </Label>
+        <br />
+        <Label subtext>
+          3 created
+        </Label>
+      </Div>
     </Div>
-  </Div>
-);
+  );
+};
 
 const Div = styled.div`
   display: inline-block;
