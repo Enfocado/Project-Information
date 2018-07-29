@@ -6,6 +6,4 @@ const con = mysql.createConnection({
   database: 'projectInformation',
 });
 
-con.connect();
-
 module.exports = con;
