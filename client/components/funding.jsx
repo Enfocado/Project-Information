@@ -1,67 +1,76 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+import moment from 'moment';
 
-const Funding = () => (
-  <Div>
-    <Progress value="50" max="100" />
-    <Paragraph currentlyFunded>
-      $516,277
-    </Paragraph>
-    <Paragraph>
-      pledged of $50,000 goal
-    </Paragraph>
+const Funding = ({
+  funding,
+  goal,
+  start,
+  end,
+  days,
+}) => {
+  return (
+    <Div>
+      <Progress value={funding / goal * 100} max="100" />
+      <Paragraph currentlyFunded>
+        {`$${funding}`}
+      </Paragraph>
+      <Paragraph>
+        {`pledged of $${goal} goal`}
+      </Paragraph>
 
-    <Paragraph backers>
-      896
-    </Paragraph>
-    <Paragraph>
-      backers
-    </Paragraph>
+      <Paragraph backers>
+        896
+      </Paragraph>
+      <Paragraph>
+        backers
+      </Paragraph>
 
-    <Paragraph backers>
-      27
-    </Paragraph>
-    <Paragraph>
-      days to go
-    </Paragraph>
+      <Paragraph backers>
+        {days}
+      </Paragraph>
+      <Paragraph>
+        days to go
+      </Paragraph>
 
-    <Button fund>
-      Back this Project
-    </Button>
-
-    <Div inner>
-      <Button follow>
-        <Div bookmark>
-          <Image src="https://png.icons8.com/windows/1600/filled-bookmark-ribbon.png" />
-        </Div>
-        Follow Project
+      <Button fund>
+        Back this Project
       </Button>
 
-      <Button share>
-        <Image src="https://ai-catcher.com/wp-content/uploads/icon_13-1.png" />
-      </Button>
+      <Div inner>
+        <Button follow>
+          <Div bookmark>
+            <Image src="https://png.icons8.com/windows/1600/filled-bookmark-ribbon.png" />
+          </Div>
+          Follow Project
+        </Button>
 
-      <Button share>
-        <Image src="https://png.icons8.com/metro/1600/twitter.png" />
-      </Button>
+        <Button share>
+          <Image src="https://ai-catcher.com/wp-content/uploads/icon_13-1.png" />
+        </Button>
 
-      <Button share>
-        <Image src="https://image.flaticon.com/icons/png/512/34/34400.png" />
-      </Button>
+        <Button share>
+          <Image src="https://png.icons8.com/metro/1600/twitter.png" />
+        </Button>
 
-      <Button share>
-        <Image src="http://cdn.onlinewebfonts.com/svg/img_1668.png" />
-      </Button>
+        <Button share>
+          <Image src="https://image.flaticon.com/icons/png/512/34/34400.png" />
+        </Button>
+
+        <Button share>
+          <Image src="http://cdn.onlinewebfonts.com/svg/img_1668.png" />
+        </Button>
+      </Div>
+      <Paragraph disclaimer>
+        <u>
+          All or nothing.
+        </u>
+        {`This project will only be funded if
+          it reaches its goal by ${end}.`}
+      </Paragraph>
     </Div>
-    <Paragraph disclaimer>
-      <u>
-        All or nothing.
-      </u>
-        This project will only be funded if
-        it reaches its goal by Thu, August 23 2018 8:59 PM PDT.
-    </Paragraph>
-  </Div>
-);
+  );
+};
 
 const Button = styled.button`
   margin-top: 25px;
