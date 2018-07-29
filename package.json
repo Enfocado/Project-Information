@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
+    "test-dev": "jest --detectOpenHandles",
     "start": "nodemon server/index.js",
     "react-dev": "webpack -d --watch"
   },

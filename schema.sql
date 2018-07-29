@@ -12,6 +12,7 @@ CREATE TABLE project (
   End_Date DATETIME,
   Funding_Goal INT,
   Currently_Goal INT,
+  Backers INT,
   Creator_ID INT,
   Location VARCHAR(200),
   Is_Followed TINYINT(1),
