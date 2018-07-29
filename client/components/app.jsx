@@ -29,7 +29,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('/project/301').then((res) => {
+    axios.get('/project/305').then((res) => {
       this.setState({
         projectName: res.data.Project_Name,
         projectDescription: res.data.Project_Description,
