@@ -6,6 +6,7 @@ import Creator from './creator';
 import Title from './title';
 import VideoPlayer from './video-player';
 import Funding from './funding';
+import Badges from './badges';
 
 class App extends React.Component {
   constructor(props) {
@@ -98,6 +99,7 @@ class App extends React.Component {
             backers={backers}
           />
           <VideoPlayer video={videoLink} />
+          <Badges category={category} location={location}/>
         </Div>
       </Div>
     );
