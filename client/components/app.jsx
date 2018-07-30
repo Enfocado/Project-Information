@@ -23,13 +23,14 @@ class App extends React.Component {
       category: 'Hardware',
       location: 'Brooklyn, NY',
       creatorID: 49,
+      backers: 50,
       companyName: 'By Looking Glass',
       companyLogo: 'http://lorempixel.com/640/480',
     };
   }
 
   componentDidMount() {
-    axios.get('/project/310').then((res) => {
+    axios.get('/project/1').then((res) => {
       this.setState({
         projectName: res.data.Project_Name,
         projectDescription: res.data.Project_Description,
@@ -42,6 +43,7 @@ class App extends React.Component {
         category: res.data.Category,
         location: res.data.Location,
         creatorID: res.data.Creator_ID,
+        backers: res.data.Backers,
         companyName: res.data.Company_Name,
         companyLogo: res.data.Company_Logo,
       });
@@ -68,7 +70,7 @@ class App extends React.Component {
   render() {
     const {
       projectName, projectDescription, currentlyFunded, fundingGoal, startDate, endDate,
-      videoLink, isFollowed, category, location, creatorID, companyName, companyLogo,
+      videoLink, isFollowed, category, location, creatorID, backers, companyName, companyLogo,
     } = this.state;
 
     const daysToGo = this.getDateDiff();
@@ -93,6 +95,7 @@ class App extends React.Component {
             end={date}
             days={daysToGo}
             follow={isFollowed}
+            backers={backers}
           />
           <VideoPlayer video={videoLink} />
         </Div>

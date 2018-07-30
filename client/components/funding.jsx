@@ -8,6 +8,7 @@ const Funding = ({
   start,
   end,
   days,
+  backers,
 }) => {
   return (
     <Div>
@@ -20,7 +21,7 @@ const Funding = ({
       </Paragraph>
 
       <Paragraph backers>
-        896
+        {backers}
       </Paragraph>
       <Paragraph>
         backers
