@@ -23,7 +23,7 @@ jobs:
       - checkout
       - run: sudo apt install -y mysql-client
       - run: npm install
-      - run: mysql.server start
+      - run: sudo service mysql start
       - run: npm run upload-schema
       - run: npm test
 
