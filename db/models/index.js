@@ -92,7 +92,7 @@ module.exports = {
       const category = faker.random.arrayElement(categories);
       const videoLink = faker.image.imageUrl();
 
-      const query = `INSERT INTO Project 
+      const query = `INSERT INTO project 
       (Project_Name, 
         Project_Description, 
         Start_Date, 

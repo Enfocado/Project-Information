@@ -47,7 +47,7 @@ module.exports = {
         if (err) {
           throw err;
         } else {
-          response.end();
+          response.status(201).end();
         }
       });
     },
@@ -59,7 +59,7 @@ module.exports = {
         if (err) {
           throw err;
         } else {
-          response.end();
+          response.status(201).end();
         }
       });
     },
