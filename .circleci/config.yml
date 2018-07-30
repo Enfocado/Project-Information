@@ -12,7 +12,8 @@ jobs:
         environment: 
           MYSQL_DATABASE: projectInformation
           MYSQL_USER: root
-          MYSQL_PASSWORD:
+          MYSQL_ALLOW_EMPTY_PASSWORD: true
+          MYSQL_HOST: 127.0.0.1
    
 
     steps:
