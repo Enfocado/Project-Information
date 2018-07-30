@@ -8,8 +8,8 @@ describe('Check Default Endpoint', () => {
   });
 });
 
-describe('Check project Endpoint', () => {
-  it('should return status code of 200', () => {
-    request(app).get('/project/1').expect(200);
-  });
-});
+// describe('Check project Endpoint', () => {
+//   it('should return status code of 200', () => {
+//     request(app).get('/project/1').expect(200);
+//   });
+// });
