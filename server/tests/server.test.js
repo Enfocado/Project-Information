@@ -26,6 +26,23 @@ describe('Check fillCreators Endpoint', () => {
   });
 });
 
+describe('Check fillProjects Endpoint', () => {
+  it('should return status code 201', async () => {
+    const response = await request(app).post('/fillProjects');
+    expect(response.statusCode).toBe(201);
+  });
+
+  it('should fill creator tables with 100 rows', async () => {
+    db.query('SELECT COUNT(*) as projectCount FROM project', (err, data) => {
+      if (err) {
+        throw err;
+      } else {
+        expect(data[0].projectCount).toBe(100);
+      }
+    });
+  });
+});
+
 describe('Check Project Endpoint', () => {
   it('should return status code of 200', async () => {
     const response = await request(app).get('/project/1');
