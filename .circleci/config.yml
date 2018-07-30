@@ -15,7 +15,6 @@ jobs:
           MYSQL_HOST: 127.0.0.1
           MYSQL_PASSWORD: 
       - image: circleci/mysql:8.0.11
-        command: mysqld
         environment:
           MYSQL_USER: root
           MYSQL_ALLOW_EMPTY_PASSWORD: true
@@ -23,7 +22,7 @@ jobs:
       - checkout
       - run: sudo apt install -y mysql-client
       - run: npm install
-      - run: sudo service mysql start
+      - run: dockerize -wait tcp://127.0.0.1:3306 -timeout 120s
       - run: npm run upload-schema
       - run: npm test
 
