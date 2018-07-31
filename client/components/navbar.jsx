@@ -78,4 +78,4 @@ const Horizontal = styled.hr`
 `;
 
 
-module.exports = NavBar;
+export default NavBar;
