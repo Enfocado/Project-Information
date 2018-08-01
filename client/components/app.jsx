@@ -111,7 +111,7 @@ const Div = styled.div`
   ${props => props.projectInformation && css`
     font: 100% "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
     width: 75%;
-    height: 50%;
+    height: auto;
     margin: 0 auto;
     padding-top: 0;
   `}
