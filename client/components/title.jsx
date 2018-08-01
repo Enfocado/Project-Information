@@ -17,7 +17,7 @@ const Title = ({ project, description }) => {
 const Div = styled.div`
   display: inline-block;
   width: 75%;
-  height: 50%;
+  height: auto;
   float: left;
   padding-left: 100px;
   align-items: top;

@@ -9,7 +9,7 @@ const VideoPlayer = () => (
 
 const IFrame = styled.iframe`
   width: 65%;
-  height: 100%;
+  height: 50%;
   border: none;
 `;
 

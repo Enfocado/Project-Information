@@ -76,7 +76,7 @@ const Funding = ({
 const Button = styled.button`
   margin-top: 25px;
   width: 100%;
-  height: 10%;
+  height: 50px;
   background: #429b76;
   font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 15px;
@@ -100,8 +100,7 @@ const Button = styled.button`
 
   ${props => props.share && css `
     margin-right: 2px;
-    width: 10%;
-    height: 9%;
+    width: 12%;
     padding: 0;
     background: transparent;
     border: none;
