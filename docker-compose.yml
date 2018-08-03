@@ -1,0 +1,20 @@
+version: '3.3'
+
+services:
+   db:
+    build: ./db/
+    image: mysql:5.7
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD='yes'
+      - MYSQL_DATABASE=projectInformation
+      - MYSQL_USER=root
+    ports:
+      - "3306:3306"
+
+   project-information:
+     build: .
+     depends_on:
+       - db
+     restart: on-failure
+     ports:
+       - "3001:3001"

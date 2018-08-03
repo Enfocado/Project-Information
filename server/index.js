@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const request = require('request');
 const Log = require('log');
 const router = require('./routes.js');
 
@@ -21,7 +22,7 @@ app.get('/', (req, res) => {
 
 if (process.env.NODE_ENV !== 'test') {
   app.listen(port, () => {
-    log.info('Listening on http://localhost:3001');
+    log.info(`Listening on http://localhost:${port}`);
   });
 }
 

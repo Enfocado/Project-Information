@@ -30,6 +30,18 @@ class App extends React.Component {
     };
   }
 
+  componentWillMount() {
+    axios.post('/fillCreators').then((res) => {
+      axios.post('/fillProjects').then((res1) => {
+        componentDidMount();
+      });
+    }).catch((err) => {
+      throw err;
+    });
+
+    
+  }
+
   componentDidMount() {
     axios.get('/project/1').then((res) => {
       this.setState({
